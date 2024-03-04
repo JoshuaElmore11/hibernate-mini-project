@@ -14,8 +14,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scanner sc = new Scanner(System.in);
         EmployeeService employeeService = new EmployeeService();
+        Scanner sc = new Scanner(System.in);
+
         boolean flag = true;
 
         //config object
@@ -25,6 +26,7 @@ public class App
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
+        //cli options
         while (flag) {
             System.out.println("******************************************************");
             System.out.println("*************Choose an Option*************************");

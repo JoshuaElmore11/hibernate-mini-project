@@ -40,7 +40,12 @@ public class EmployeeService {
     public void getEmployeeById(Session session, Scanner sc){
         System.out.println("Enter employee ID to view employee: ");
         int id = sc.nextInt();
-        System.out.println(employeeRepository.getEmployeeById(session, id));
+        Employee employee = employeeRepository.getEmployeeById(session, id);
+        if (employee != null){
+            System.out.println(employee);
+        } else {
+            System.out.println("No employee by that ID.");
+        }
     }
 
     public void getAllEmployees(Session session){

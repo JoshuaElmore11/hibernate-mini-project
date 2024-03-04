@@ -20,13 +20,8 @@ public class EmployeeRepository {
     }
 
     public Employee getEmployeeById (Session session, int id){
-        Employee employee = new Employee();
-        try {
-            employee = session.get(Employee.class, id);
-        } catch (Exception e) {
-            System.out.println("No employee by that ID");
-        }
-        return employee;
+        return session.get(Employee.class, id);
+
     }
 
     public List<Employee> getAllEmployee(Session session) {
